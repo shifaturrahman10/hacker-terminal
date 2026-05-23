@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Terminal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="terminal">
+
+  <div class="top-bar">
+
+    <button id="fullBtn">FULL MODE</button>
+
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+
+    <p>root@system:~</p>
+
+  </div>
+
+  <div class="terminal-body" id="terminal-body">
+    <p class="line">Booting system...</p>
+
+    <button id="hackBtn">START HACKING MODE</button>
+ </div>
+ <div id="progressContainer">
+  <div id="progressText">Hacking Progress: 0%</div>
+  <div id="progressBar">
+    <div id="progressFill"></div>
+  </div>
+</div>
+ <div id="ipBox"></div>
+ <div id="mapBox">
+   <div id="map">
+     <div id="radar">
+  <div id="sweep"></div>
+</div>
+  <div id="dot"></div>
+  <div id="mapText">Initializing map...</div>
+</div>
+  <div id="mapText">Initializing world map...</div>
+</div>
+ <div id="mapBox">
+  <div id="mapText">Scanning World Network...</div>
+</div>
+  <div class="input-area">
+    <span>>></span>
+    <input type="text" id="command" placeholder="Enter command...">
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<div id="alertFlash"></div>
+</body>
+</html>

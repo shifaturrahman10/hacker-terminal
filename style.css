@@ -1,0 +1,260 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:black;
+overflow:hidden;
+font-family:monospace;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#00ff66;
+}
+
+#matrix{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.terminal{
+width:90%;
+max-width:900px;
+height:80vh;
+background:rgba(0,0,0,0.8);
+border:1px solid #00ff66;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+overflow:hidden;
+box-shadow:0 0 20px #00ff66;
+}
+
+.top-bar{
+height:50px;
+background:#111;
+display:flex;
+align-items:center;
+padding:0 20px;
+border-bottom:1px solid #00ff66;
+gap:10px;
+}
+
+.dot{
+width:10px;
+height:10px;
+border-radius:50%;
+}
+
+.red{background:red;}
+.yellow{background:yellow;}
+.green{background:lime;}
+
+.terminal-body{
+flex:1;
+padding:15px;
+overflow-y:auto;
+}
+
+.line{
+margin:5px 0;
+animation:flicker 0.1s infinite;
+}
+
+@keyframes flicker{
+0%{opacity:1;}
+50%{opacity:0.7;}
+100%{opacity:1;}
+}
+
+.input-area{
+display:flex;
+align-items:center;
+padding:10px;
+border-top:1px solid #00ff66;
+background:black;
+}
+
+.input-area input{
+flex:1;
+background:black;
+border:none;
+outline:none;
+color:#00ff66;
+font-family:monospace;
+}
+
+#hackBtn{
+background:black;
+border:1px solid #00ff66;
+color:#00ff66;
+padding:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+#hackBtn:hover{
+background:#00ff66;
+color:black;
+}
+
+#ipBox{
+padding:10px;
+border-top:1px solid #00ff66;
+}
+
+.glitch{
+animation:glitch 0.2s infinite;
+}
+
+@keyframes glitch{
+0%{transform:translate(0);}
+25%{transform:translate(-1px,1px);}
+50%{transform:translate(1px,-1px);}
+75%{transform:translate(-1px,-1px);}
+100%{transform:translate(0);}
+}
+
+#fullBtn{
+background:black;
+border:1px solid red;
+color:red;
+padding:5px 10px;
+cursor:pointer;
+}
+
+body.fullscreen-mode .top-bar{
+display:none;
+}
+
+body.fullscreen-mode #ipBox{
+display:none;
+}
+
+#ipBox{
+  margin-top:auto;
+  padding:10px;
+  border-top:1px solid #00ff66;
+  color:#00ff66;
+}
+
+#progressContainer{
+  margin-top:10px;
+  padding:10px;
+  border-top:1px solid #00ff66;
+  color:#00ff66;
+  font-family:monospace;
+}
+
+#progressBar{
+  width:100%;
+  height:10px;
+  border:1px solid #00ff66;
+  margin-top:5px;
+}
+
+#progressFill{
+  height:100%;
+  width:0%;
+  background:#00ff66;
+  transition:0.3s;
+}
+
+#mapBox{
+  margin-top:10px;
+  padding:10px;
+  border-top:1px solid #00ff66;
+  color:#00ff66;
+  font-family:monospace;
+}
+
+#alertFlash{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:red;
+  opacity:0;
+  pointer-events:none;
+  z-index:999;
+}
+
+#mapBox{
+  margin-top:10px;
+  padding:10px;
+  border-top:1px solid #00ff66;
+  color:#00ff66;
+  font-family:monospace;
+}
+
+#mapText{
+  animation: flicker 0.3s infinite;
+}
+
+#map{
+  position:relative;
+  width:100%;
+  height:120px;
+  border:1px solid #00ff66;
+  margin-top:10px;
+  overflow:hidden;
+}
+
+/* glowing dot */
+#dot{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#00ff66;
+  box-shadow:0 0 10px #00ff66,0 0 20px #00ff66;
+  top:50%;
+  left:0%;
+  transition:0.6s linear;
+}
+
+#radar{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:2px solid #00ff66;
+  opacity:0.4;
+  animation:pulse 2s infinite;
+}
+
+/* rotating sweep line */
+#sweep{
+  position:absolute;
+  width:50%;
+  height:2px;
+  background:#00ff66;
+  top:50%;
+  left:50%;
+  transform-origin:left;
+  animation:rotate 2s linear infinite;
+  box-shadow:0 0 10px #00ff66;
+}
+
+@keyframes rotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes pulse{
+  0%{opacity:0.2; transform:scale(1);}
+  50%{opacity:0.6; transform:scale(1.05);}
+  100%{opacity:0.2; transform:scale(1);}
+}
