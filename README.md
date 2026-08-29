@@ -1,1 +1,1 @@
-# hacker-terminal
+# hacking-terminal
